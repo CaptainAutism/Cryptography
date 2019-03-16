@@ -25,4 +25,13 @@ class Converter:
             result += new_letter
         return result
 
+    def multiplicative_shift(self, text, multiplier):
+        result = ""
+        for letter in text:
+            num_repr = self.letter_to_num(letter)
+            shifted = (num_repr * multiplier) % 26
+            new_letter = self.num_to_letter(shifted)
+            result += new_letter
+        return result
+
 
